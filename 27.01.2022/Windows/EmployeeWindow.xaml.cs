@@ -104,5 +104,45 @@ namespace _27._01._2022.Windows
         {
             Filter();
         }
+
+       
+
+
+    
+
+        private void lvEmployee_KeyDown(object sender, KeyEventArgs e )
+        {
+            if (e.Key == Key.Delete || e.Key == Key.Back)
+            {
+                var resClick = MessageBox.Show("Удалить пользователя?", "Подтвержение", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (resClick == MessageBoxResult.No)
+                {
+                    return;
+                }
+
+                try 
+                {
+                    if (lvEmployee.SelectedItem is EF.Employee)
+                    {
+                        var empl = lvEmployee.SelectedItem as EF.Employee;
+                        ClassHelper.AppData.Context.Employee.Remove(empl);
+                        ClassHelper.AppData.Context.SaveChanges();// НЕПОНЯТНОНЕЯСНОЧТОТУТПРОИСХОДИТТОЖЕСАМОЕВДОБАВЛЕНИИ
+                        MessageBox.Show("Пользователь успешно удалён", "Готово", MessageBoxButton.OK, MessageBoxImage.Information);
+                        Filter();
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+
+
+
+
+                    
+              
+            }
+        }
     }
 }
