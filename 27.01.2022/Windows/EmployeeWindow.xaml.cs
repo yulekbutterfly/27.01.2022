@@ -22,7 +22,7 @@ namespace _27._01._2022.Windows
     {
         List<string> ListSort = new List<string>()
         {
-         "По умолчанию", "По фамилии", "По телефону", "По почте", "По должности" 
+         "По умолчанию", "По фамилии", "По телефону", "По почте", "По должности"
         };
 
         public EmployeeWindow()
@@ -30,13 +30,13 @@ namespace _27._01._2022.Windows
             InitializeComponent();
             cmbSort.ItemsSource = ListSort;
             cmbSort.SelectedIndex = 0;
-            
+
         }
         private void Filter()
         {
             List<EF.Employee> ListEmployee = new List<EF.Employee>();
             ListEmployee = ClassHelper.AppData.Context.Employee.ToList();
-           
+
 
             //издевательства 
             ListEmployee = ListEmployee.Where(i =>
@@ -92,7 +92,7 @@ namespace _27._01._2022.Windows
             lvEmployee.ItemsSource = ClassHelper.AppData.Context.Employee.ToList();
             Filter();
         }
-       
+
 
 
         private void cmbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -105,44 +105,48 @@ namespace _27._01._2022.Windows
             Filter();
         }
 
-       
 
 
-    
 
-        private void lvEmployee_KeyDown(object sender, KeyEventArgs e )
+
+
+        private void lvEmployee_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Delete || e.Key == Key.Back)
             {
-                var resClick = MessageBox.Show("Удалить пользователя?", "Подтвержение", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                if (resClick == MessageBoxResult.No)
-                {
-                    return;
-                }
-
-                try 
+                try
                 {
                     if (lvEmployee.SelectedItem is EF.Employee)
                     {
-                        var empl = lvEmployee.SelectedItem as EF.Employee;
-                        ClassHelper.AppData.Context.Employee.Remove(empl);
-                        ClassHelper.AppData.Context.SaveChanges();// НЕПОНЯТНОНЕЯСНОЧТОТУТПРОИСХОДИТТОЖЕСАМОЕВДОБАВЛЕНИИ
-                        MessageBox.Show("Пользователь успешно удалён", "Готово", MessageBoxButton.OK, MessageBoxImage.Information);
+                        var resmsg = MessageBox.Show("Удалить пользователя?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                        if (resmsg == MessageBoxResult.No)
+                        {
+                            return;
+                        }
+                        var stf = lvEmployee.SelectedItem as EF.Employee;
+                        ClassHelper.AppData.Context.Employee.Remove(stf);
+                        ClassHelper.AppData.Context.SaveChanges();
+                        MessageBox.Show("Пользователь успешно удален", "Удаление", MessageBoxButton.OK, MessageBoxImage.Information);
                         Filter();
-
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message.ToString());
                 }
+            }
+        }
 
-
-
-
-                    
-              
+        private void lvEmployee_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (lvEmployee.SelectedItem is EF.Employee)
+            {
+                var empl = lvEmployee.SelectedItem as EF.Employee;
+                AddEmployeeWindow addEmployeeWindow = new AddEmployeeWindow();
+                addEmployeeWindow.ShowDialog();
+                Filter();
             }
         }
     }
 }
+

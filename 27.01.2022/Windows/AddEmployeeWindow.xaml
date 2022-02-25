@@ -25,7 +25,8 @@
             <RowDefinition Height="55"/>
             <RowDefinition Height="55"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Добавление Пользователя"
+        
+        <TextBlock x:Name ="tbTitle"  Text="Добавление Пользователя"
                        HorizontalAlignment="Center"
                        FontSize="40"
                        Margin="40,10,30,50" 

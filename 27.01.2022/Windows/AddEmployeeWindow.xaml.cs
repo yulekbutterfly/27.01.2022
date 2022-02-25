@@ -21,14 +21,42 @@ namespace _27._01._2022.Windows
     /// </summary>
     public partial class AddEmployeeWindow : Window
     {
+        bool isEdit = false;
+        EF.Employee editEmployee = new EF.Employee();
+
         public AddEmployeeWindow()
         {
             InitializeComponent();
             cmbRole.ItemsSource = ClassHelper.AppData.Context.Role.ToList();
             cmbRole.DisplayMemberPath = "NameRole";
             cmbRole.SelectedItem = "0";
+
+            isEdit = false;
         }
-        private void btnadd_Click(object sender, RoutedEventArgs e)
+
+        public AddEmployeeWindow(EF.Employee employee)
+        {
+            InitializeComponent();
+            cmbRole.ItemsSource = ClassHelper.AppData.Context.Role.ToList();
+            cmbRole.DisplayMemberPath = "NameRole";
+            Lname.Text = employee.Lname;
+            FName.Text = employee.FName;
+            MName.Text = employee.MName;
+            Phone.Text = employee.Phone;
+            Email.Text = employee.Email;
+            Login.Text = employee.Login;
+            Password.Text = employee.Password;
+            //cmbRole.SelectedIndex = employee.IDRole - 1; 
+
+            tbTitle.Text = "Изменение данных работника";
+            btnadd.Content = "Сохранить";
+
+            isEdit = true; 
+            editEmployee = employee;
+           
+        }
+
+            private void btnadd_Click(object sender, RoutedEventArgs e)
         { 
             bool IsValidEmail(string email)
             {
@@ -84,31 +112,76 @@ namespace _27._01._2022.Windows
                 MessageBox.Show("Поле Телефон должно состоять только из цифр", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            var resClick = MessageBox.Show("Вы уверены?", "Подтвержение", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            if (resClick == MessageBoxResult.No)
+
+            if (isEdit) //Изменение пользователя 
+
             {
-                return;
-            }
-            try
-            {
-                EF.Employee newstaff = new EF.Employee();
-                newstaff.Lname = Lname.Text;
-                newstaff.FName = FName.Text;
-                newstaff.MName = MName.Text;
-                newstaff.Phone = Phone.Text;
-                newstaff.Email = Email.Text;
-                newstaff.IDRole = (cmbRole.SelectedItem as EF.Role).ID;
-                newstaff.Login = Login.Text;
-                newstaff.Password = Password.Text;
-                ClassHelper.AppData.Context.Employee.Add(newstaff);
+                var resClick = MessageBox.Show("Изменить пользователя?", "Подтвержение", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (resClick == MessageBoxResult.No)
+                {
+                    return;
+                }
+             try
+                {
+                    editEmployee.Lname = Lname.Text;
+                    editEmployee.FName = FName.Text;
+                    editEmployee.MName = MName.Text;
+                    editEmployee.Phone = Phone.Text;
+                    editEmployee.Email = Email.Text;
+                    editEmployee.IDRole = (cmbRole.SelectedItem as EF.Role).ID;
+                    editEmployee.Login = Login.Text;
+                    editEmployee.Password = Password.Text;
+
+                    ClassHelper.AppData.Context.SaveChanges();
+                    MessageBox.Show("Пользователь изменён");
+                    this.Close();
+                }
+            catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                editEmployee.Lname = Lname.Text;
+                editEmployee.FName = FName.Text;
+                editEmployee.MName = MName.Text;
+                editEmployee.Phone = Phone.Text;
+                editEmployee.Email = Email.Text;
+                editEmployee.IDRole = (cmbRole.SelectedItem as EF.Role).ID;
+                editEmployee.Login = Login.Text;
+                editEmployee.Password = Password.Text;
+
                 ClassHelper.AppData.Context.SaveChanges();
-                MessageBox.Show("Пользователь добавлен");
+                MessageBox.Show("Пользователь изменён");
                 this.Close();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message.ToString());
+                var resClick = MessageBox.Show("Вы уверены?", "Подтвержение", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (resClick == MessageBoxResult.No)
+                {
+                    return;
+                }
+                try
+                {
+                    EF.Employee newstaff = new EF.Employee();
+                    newstaff.Lname = Lname.Text;
+                    newstaff.FName = FName.Text;
+                    newstaff.MName = MName.Text;
+                    newstaff.Phone = Phone.Text;
+                    newstaff.Email = Email.Text;
+                    newstaff.IDRole = (cmbRole.SelectedItem as EF.Role).ID;
+                    newstaff.Login = Login.Text;
+                    newstaff.Password = Password.Text;
+                    ClassHelper.AppData.Context.Employee.Add(newstaff);
+                    ClassHelper.AppData.Context.SaveChanges();
+                    MessageBox.Show("Пользователь добавлен");
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
             }
+
         }
     }
 }

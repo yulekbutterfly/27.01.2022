@@ -5,22 +5,22 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="82b6bee261bc45d5993bca6ab29f33ed" Name="Diagram1" ZoomLevel="73">
-        <EntityTypeShape EntityType="ArendaModel.Client" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ArendaModel.ClientProduct" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ArendaModel.Employee" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ArendaModel.Gender" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ArendaModel.History" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ArendaModel.Product" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ArendaModel.Role" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ArendaModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ArendaModel.Type" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
-        <AssociationConnector Association="ArendaModel.FK_Client_Gender" ManuallyRouted="false" />
-        <AssociationConnector Association="ArendaModel.FK_ClientProduct_Client1" ManuallyRouted="false" />
-        <AssociationConnector Association="ArendaModel.FK_ClientProduct_Employee" ManuallyRouted="false" />
-        <AssociationConnector Association="ArendaModel.FK_ClientProduct_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="ArendaModel.FK_History_ClientProduct" ManuallyRouted="false" />
-        <AssociationConnector Association="ArendaModel.FK_Employee_Role" ManuallyRouted="false" />
-        <AssociationConnector Association="ArendaModel.FK_Product_Type" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ArendaModel.Client" Width="1.5" PointX="3" PointY="6.625" />
+        <EntityTypeShape EntityType="ArendaModel.ClientProduct" Width="1.5" PointX="5.25" PointY="1.25" />
+        <EntityTypeShape EntityType="ArendaModel.Employee" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="ArendaModel.Gender" Width="1.5" PointX="0.75" PointY="7.5" />
+        <EntityTypeShape EntityType="ArendaModel.History" Width="1.5" PointX="7.5" PointY="1.5" />
+        <EntityTypeShape EntityType="ArendaModel.Product" Width="1.5" PointX="3" PointY="10.75" />
+        <EntityTypeShape EntityType="ArendaModel.Role" Width="1.5" PointX="0.75" PointY="1.75" />
+        <EntityTypeShape EntityType="ArendaModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ArendaModel.Type" Width="1.5" PointX="0.75" PointY="11.25" />
+        <AssociationConnector Association="ArendaModel.FK_Client_Gender" />
+        <AssociationConnector Association="ArendaModel.FK_ClientProduct_Client1" />
+        <AssociationConnector Association="ArendaModel.FK_ClientProduct_Employee" />
+        <AssociationConnector Association="ArendaModel.FK_ClientProduct_Product" />
+        <AssociationConnector Association="ArendaModel.FK_History_ClientProduct" />
+        <AssociationConnector Association="ArendaModel.FK_Employee_Role" />
+        <AssociationConnector Association="ArendaModel.FK_Product_Type" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

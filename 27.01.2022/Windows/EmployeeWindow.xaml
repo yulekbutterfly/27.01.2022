@@ -20,7 +20,11 @@
                   FontSize="20"/>
         <ListView x:Name="lvEmployee"
                   Grid.Row="2"
-                  KeyDown="lvEmployee_KeyDown">
+                  KeyDown="lvEmployee_KeyDown" MouseDoubleClick="lvEmployee_MouseDoubleClick"
+                  > 
+
+           
+                 
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Код" Width="60" DisplayMemberBinding="{Binding ID}"/>
