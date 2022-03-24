@@ -15,10 +15,10 @@ namespace _27._01._2022.EF
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class Entities : DbContext
+    public partial class ArendaEntities : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public ArendaEntities()
+            : base("name=ArendaEntities")
         {
         }
     

@@ -12,21 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace _27._01._2022.Windows
+namespace _27._01._2022
 {
     /// <summary>
-    /// Логика взаимодействия для Window7.xaml
+    /// Логика взаимодействия для Window1.xaml
     /// </summary>
-    public partial class AddingClient : Window
+    public partial class Window1 : Window
     {
-        public AddingClient()
+        public Window1()
         {
             InitializeComponent();
-        }
-
-        private void btnaddClients_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

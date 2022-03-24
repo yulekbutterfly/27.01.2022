@@ -8,7 +8,7 @@ namespace _27._01._2022.ClassHelper
 {
    public class AppData
    {
-     public static EF.Entities Context { get; } = new EF.Entities();
+     public static EF.ArendaEntities Context { get; } = new EF.ArendaEntities();
 
    }
 }

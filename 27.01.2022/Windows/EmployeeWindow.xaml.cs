@@ -95,6 +95,7 @@ namespace _27._01._2022.Windows
 
 
 
+
         private void cmbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Filter();

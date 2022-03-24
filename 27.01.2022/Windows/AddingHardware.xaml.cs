@@ -17,11 +17,16 @@ namespace _27._01._2022.Windows
     /// <summary>
     /// Логика взаимодействия для Window6.xaml
     /// </summary>
-    public partial class Window6 : Window
+    public partial class AddingHardware : Window
     {
-        public Window6()
+        public AddingHardware()
         {
             InitializeComponent();
+        }
+
+        private void btnaddProduct_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

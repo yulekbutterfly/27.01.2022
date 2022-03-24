@@ -19,7 +19,30 @@
                   HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                   FontSize="20"/>
-            <ListView x:Name="lvProduct"
+         <WrapPanel Grid.Row="1"
+                   VerticalAlignment="Center">
+            <TextBlock Text="Поиск"
+         FontSize="26"
+         Margin="10,0">
+
+            </TextBlock>
+            <TextBox x:Name="txtSearch"
+                     Width="300"
+                     FontSize="16"
+                     Margin="10"
+                     TextChanged="txtSearch_TextChanged">
+
+
+            </TextBox>
+            <ComboBox x:Name="cmbSort"
+                      Width="300"
+                      FontSize="16"
+                      Margin="10"
+                      SelectionChanged="cmbSort_SelectionChanged">
+
+            </ComboBox>
+        </WrapPanel>
+        <ListView x:Name="lvProduct"
                   Grid.Row="2">
                 <ListView.View>
                     <GridView>
@@ -37,6 +60,17 @@
 
 
             </ListView>
+        <Button x:Name="btnaddProd"
+                Grid.Row="3"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="300"
+                Height="50"
+                Content="Добавить товар"
+                FontSize="25"
+                Click="btnaddProd_Click">
 
-        </Grid>
+        </Button>
+
+    </Grid>
 </Window>

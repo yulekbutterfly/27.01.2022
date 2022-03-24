@@ -1,12 +1,181 @@
-﻿<Window x:Class="_27._01._2022.Windows.Window7"
+﻿<Window x:Class="_27._01._2022.Windows.AddingClient"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_27._01._2022.Windows"
         mc:Ignorable="d"
-        Title="Window7" Height="450" Width="800">
+        Title="Window7" Height="700" Width="800">
     <Grid>
+
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="55"/>
+
+
+        </Grid.RowDefinitions>
+
+            <TextBlock x:Name ="tbTitle"  Text="Добавление Клиента"
+                       HorizontalAlignment="Center"
+                      
+                       FontSize="35"
+                       Grid.ColumnSpan="2"
+                       Grid.Row="0" 
+                       Grid.RowSpan="2"/>
+                       
+            <TextBlock Text="Фамилия"
+                       HorizontalAlignment="Center"
+                       FontSize="30"
+                       Grid.Row="1"
+                       VerticalAlignment="Center"/>
+                     
+                        
+            <TextBlock Text="Имя"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="30"
+                       Grid.Row="2"/>
+            <TextBlock Text="Отчество"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="30"
+                       Grid.Row="3"/>
+            <TextBlock Text="Телефон"
+                       HorizontalAlignment="Center"
+                       FontSize="30"
+                       Grid.Row="4"/>
+         
+            <TextBlock Text="Почта "
+                       HorizontalAlignment="Center"
+                       FontSize="30"
+                       Grid.Row="5"/>
+        <TextBlock Text="Серия паспорта"
+                       HorizontalAlignment="Center"
+                       FontSize="30"
+                       Grid.Row="6" 
+                       Grid.RowSpan="2"/>
         
+
+        <TextBlock Text="Номер паспорта"
+                       HorizontalAlignment="Center"
+                       FontSize="30"
+                       Grid.Row="7" 
+                       Grid.RowSpan="2"/>
+
+        <TextBlock Text="День Рождения "
+                       HorizontalAlignment="Center"
+                       FontSize="30"
+                       Grid.Row="8" 
+                       Grid.RowSpan="2"/>
+        <TextBlock Text="Пол"
+                       HorizontalAlignment="Center"
+                       FontSize="30"
+                       Grid.Row="9" 
+                       Grid.RowSpan="2"/>
+        <TextBox x:Name="Gender"
+                 Grid.Column="1"
+                 Grid.Row="9"
+                 Width="350"
+                 Height="50"
+                 VerticalAlignment="Stretch">
+
+        </TextBox>
+
+
+        <Button x:Name="btnaddClients"
+           
+              Grid.Row="11"
+                Width="250" 
+                Content="Добавить"
+                FontSize="20"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Center" 
+                
+                Click="btnaddClients_Click"/>
+            <TextBox x:Name="Lname"
+                 Grid.Column="1"
+                 Grid.Row="1"
+                 Width="350"
+                 Height="50"
+                 VerticalAlignment="Stretch">
+
+            </TextBox>
+            <TextBox x:Name="FName"
+                 Grid.Column="1"
+                 Grid.Row="2"
+                 Width="350"
+                 Height="50"
+                 VerticalAlignment="Stretch">
+
+            </TextBox>
+            <TextBox x:Name="MName"
+                 Grid.Column="1"
+                 Grid.Row="3"
+                 Width="350"
+                 Height="50"
+                 VerticalAlignment="Stretch">
+
+            </TextBox>
+            <TextBox x:Name="Phone"
+                 Grid.Column="1"
+                 Grid.Row="4"
+                 Width="350"
+                 Height="50"
+                 VerticalAlignment="Stretch">
+
+            </TextBox>
+            <TextBox x:Name="Email"
+                 Grid.Column="1"
+                 Grid.Row="5"
+                 Width="350"
+                 Height="50"
+                 VerticalAlignment="Stretch">
+
+            </TextBox>
+            <TextBox x:Name="SPassporta"
+                 Grid.Column="1"
+                 Grid.Row="6"
+                 Width="350"
+                 Height="50"
+                 VerticalAlignment="Stretch">
+
+            </TextBox>
+        <TextBox x:Name="Login"
+                 Grid.Column="1"
+                 Grid.Row="7"
+                 Width="350"
+                 Height="50"
+                 VerticalAlignment="Stretch">
+
+
+            </TextBox>
+            <TextBox x:Name="Password"
+                 Grid.Column="1"
+                 Grid.Row="8"
+                 Width="350"
+                 Height="50"
+                 VerticalAlignment="Stretch">
+
+            </TextBox>
+      
+
+
+
     </Grid>
 </Window>

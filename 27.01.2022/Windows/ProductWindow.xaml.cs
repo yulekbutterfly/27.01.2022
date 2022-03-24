@@ -24,5 +24,20 @@ namespace _27._01._2022.Windows
             InitializeComponent();
             lvProduct.ItemsSource = ClassHelper.AppData.Context.Product.ToList();
         }
+
+        private void btnaddProd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cmbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
