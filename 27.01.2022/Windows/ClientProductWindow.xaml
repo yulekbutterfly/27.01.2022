@@ -12,6 +12,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
+           
 
         </Grid.RowDefinitions>
         <TextBlock Text="Список Аренды "
@@ -26,6 +27,9 @@
                     <GridViewColumn Header="Код Клиента " Width="150" DisplayMemberBinding="{Binding IDClient}"/>
                     <GridViewColumn Header="Код Сотрудника" Width="150" DisplayMemberBinding="{Binding IDEmployee}"/>
                     <GridViewColumn Header="Код Товара" Width="150" DisplayMemberBinding="{Binding IDProduct}"/>
+                    <GridViewColumn Header="Дата начала аренды" Width="150" DisplayMemberBinding="{Binding SaleStartDate}"/>
+                    <GridViewColumn Header="Дата конца аренды" Width="150" DisplayMemberBinding="{Binding SaleEndDate}"/>
+                    <GridViewColumn Header="Итоговая стоимость" Width="150" DisplayMemberBinding="{Binding TotalCost}"/>
                     
 
                 </GridView>
@@ -34,7 +38,17 @@
 
 
         </ListView>
-
+        <Button x:Name="btn_registr"
+                    Content="Оформить товар в аренду"
+                    Width="200"
+                    Height="50"
+                    FontSize="16"
+                    Margin="5"
+                    Grid.Row="3"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Click="btn_registr_Click"/>
+        
 
     </Grid>
 </Window>

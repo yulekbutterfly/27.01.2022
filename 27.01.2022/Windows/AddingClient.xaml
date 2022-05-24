@@ -88,14 +88,15 @@
                        FontSize="30"
                        Grid.Row="9" 
                        Grid.RowSpan="2"/>
-        <TextBox x:Name="Gender"
+        <ComboBox x:Name="cmbGnd"
                  Grid.Column="1"
                  Grid.Row="9"
                  Width="350"
                  Height="50"
-                 VerticalAlignment="Stretch">
+                 VerticalAlignment="Stretch" 
+               >
 
-        </TextBox>
+        </ComboBox>
 
 
         <Button x:Name="btnaddClients"
@@ -156,7 +157,7 @@
                  VerticalAlignment="Stretch">
 
             </TextBox>
-        <TextBox x:Name="Login"
+        <TextBox x:Name="NPassporta"
                  Grid.Column="1"
                  Grid.Row="7"
                  Width="350"
@@ -165,17 +166,15 @@
 
 
             </TextBox>
-            <TextBox x:Name="Password"
+            <DatePicker x:Name="Birth"
                  Grid.Column="1"
                  Grid.Row="8"
                  Width="350"
                  Height="50"
                  VerticalAlignment="Stretch">
 
-            </TextBox>
+            </DatePicker>
       
-
-
 
     </Grid>
 </Window>

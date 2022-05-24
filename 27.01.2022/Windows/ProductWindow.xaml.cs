@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
+
 namespace _27._01._2022.Windows
 {
     /// <summary>
@@ -28,6 +30,14 @@ namespace _27._01._2022.Windows
         private void btnaddProd_Click(object sender, RoutedEventArgs e)
         {
 
+
+                AddingHardware addingHardware = new AddingHardware();
+                this.Hide();
+                addingHardware.Show();
+                //lvClient.ItemsSource = ClassHelper.AppData.Context.Client.ToList();
+
+
+            
         }
 
         private void cmbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -39,5 +49,7 @@ namespace _27._01._2022.Windows
         {
 
         }
+
+        
     }
 }

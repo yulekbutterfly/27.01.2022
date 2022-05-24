@@ -11,33 +11,30 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using _27._01._2022.Windows;
+using static _27._01._2022.ClassHelper.DataTransmission;
 
 namespace _27._01._2022.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для EmployeeWindow.xaml
+    /// Логика взаимодействия для ChooseEmployee.xaml
     /// </summary>
-    public partial class EmployeeWindow : Window
+    public partial class ChooseEmployee : Window
     {
         List<string> ListSort = new List<string>()
         {
          "По умолчанию", "По фамилии", "По телефону", "По почте", "По должности"
         };
-
-        public EmployeeWindow()
+        public ChooseEmployee()
         {
             InitializeComponent();
             cmbSort.ItemsSource = ListSort;
             cmbSort.SelectedIndex = 0;
-
         }
-
         private void Filter()
         {
             List<EF.Employee> ListEmployee = new List<EF.Employee>();
             ListEmployee = ClassHelper.AppData.Context.Employee.ToList();
-            ListEmployee = ListEmployee.Where(i => i.IsDeleted==false).ToList();
+            ListEmployee = ListEmployee.Where(i => i.IsDeleted == false).ToList();
 
             //издевательства (Поиск по нужным параметрам и соритровка по нужным параметрам)
             ListEmployee = ListEmployee.Where(i =>
@@ -84,30 +81,6 @@ namespace _27._01._2022.Windows
 
             lvEmployee.ItemsSource = ListEmployee;
         }
-
-        private void btn_addempl_Click(object sender, RoutedEventArgs e)
-        {
-            AddEmployeeWindow addemployeeWindow = new AddEmployeeWindow();
-            this.Hide();
-            addemployeeWindow.ShowDialog();
-            this.Show();
-            lvEmployee.ItemsSource = ClassHelper.AppData.Context.Employee.ToList();
-            Filter();
-        }
-
-        // Изменение пользователя
-        //private void LV_Employee_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        //{
-        //    if (lvEmployee.SelectedItem is EmployeeWindow)
-        //    {
-        //        EmployeeWindow empl = lvEmployee.SelectedItem as EmployeeWindow;
-        //        AddEmployeeWindow editEmployee = new AddEmployeeWindow(empl);
-        //        editEmployee.ShowDialog();
-        //        Filter();
-        //    }
-        //}
-
-
         private void cmbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Filter();
@@ -117,50 +90,10 @@ namespace _27._01._2022.Windows
         {
             Filter();
         }
-
-
-
-
-
-        //Удаление пользователя 
-        private void lvEmployee_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Delete || e.Key == Key.Back)
-            {
-                //try
-                //{
-                    if (lvEmployee.SelectedItem is EF.Employee)
-                    {
-                        var resmsg = MessageBox.Show("Удалить пользователя?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                        if (resmsg == MessageBoxResult.No)
-                        {
-                            return;
-                        }
-                        var stf = lvEmployee.SelectedItem as EF.Employee;
-                        stf.IsDeleted = true;
-                        ClassHelper.AppData.Context.SaveChanges();
-                        MessageBox.Show("Пользователь успешно удален", "Удаление", MessageBoxButton.OK, MessageBoxImage.Information);
-                        Filter();
-                    }
-                //}
-                //catch (Exception ex)
-                //{
-                //    MessageBox.Show(ex.Message.ToString());
-                //}
-            }
-        }
-
-
         private void lvEmployee_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if (lvEmployee.SelectedItem is EF.Employee)
-            {
-                var empl = lvEmployee.SelectedItem as EF.Employee;
-                AddEmployeeWindow addEmployeeWindow = new AddEmployeeWindow(empl);
-                addEmployeeWindow.ShowDialog();
-                Filter();
-            }
+            GetEmployee = lvEmployee.SelectedItem as EF.Employee;
+            this.Close();
         }
     }
 }
-

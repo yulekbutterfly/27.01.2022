@@ -12,26 +12,18 @@ namespace _27._01._2022.EF
     using System;
     using System.Collections.Generic;
     
-    public partial class ClientProduct
+    public partial class Status
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ClientProduct()
+        public Status()
         {
-            this.History = new HashSet<History>();
+            this.Product = new HashSet<Product>();
         }
     
         public int ID { get; set; }
-        public int IDClient { get; set; }
-        public int IDEmployee { get; set; }
-        public int IDProduct { get; set; }
-        public Nullable<System.DateTime> SaleStartDate { get; set; }
-        public Nullable<System.DateTime> SaleEndDate { get; set; }
-        public Nullable<decimal> TotalCost { get; set; }
+        public string NameStatus { get; set; }
     
-        public virtual Client Client { get; set; }
-        public virtual Employee Employee { get; set; }
-        public virtual Product Product { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<History> History { get; set; }
+        public virtual ICollection<Product> Product { get; set; }
     }
 }

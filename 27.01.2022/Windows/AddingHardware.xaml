@@ -21,7 +21,7 @@
             <RowDefinition Height="55"/>
             <RowDefinition Height="55"/>
             <RowDefinition Height="55"/>
-    
+
 
         </Grid.RowDefinitions>
 
@@ -66,18 +66,17 @@
                        Grid.RowSpan="2"/>
 
 
-        
+
 
         <Button x:Name="btnaddProduct"
            
-              Grid.Row="10"
+              Grid.Row="8"
                 Width="250" 
                 Content="Добавить"
                 FontSize="20"
-                VerticalAlignment="Stretch"
                 HorizontalAlignment="Center" 
                 
-                Click="btnaddProduct_Click"/>
+                Click="btnaddProduct_Click" Height="55" VerticalAlignment="Top"/>
         <TextBox x:Name="tbProdTitle"
                  Grid.Column="1"
                  Grid.Row="1"
@@ -86,14 +85,14 @@
                  VerticalAlignment="Stretch">
 
         </TextBox>
-        <TextBox x:Name="Type"
+        <ComboBox x:Name="cmbType"
                  Grid.Column="1"
                  Grid.Row="2"
                  Width="350"
                  Height="50"
                  VerticalAlignment="Stretch">
 
-        </TextBox>
+        </ComboBox>
         <TextBox x:Name="Cost"
                  Grid.Column="1"
                  Grid.Row="3"
@@ -110,15 +109,15 @@
                  VerticalAlignment="Stretch">
 
         </TextBox>
-        <TextBox x:Name="Status"
+        <ComboBox x:Name="cbStatus"
                  Grid.Column="1"
                  Grid.Row="5"
                  Width="350"
                  Height="50"
                  VerticalAlignment="Stretch">
 
-        </TextBox>
-        <TextBox x:Name="DateMan"
+        </ComboBox>
+        <TextBox x:Name="tbDateOfIssue"
                  Grid.Column="1"
                  Grid.Row="6"
                  Width="350"
@@ -126,8 +125,8 @@
                  VerticalAlignment="Stretch">
 
         </TextBox>
-       
-      
+
+
 
 
 

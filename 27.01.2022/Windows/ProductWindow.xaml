@@ -19,11 +19,11 @@
                   HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                   FontSize="20"/>
-         <WrapPanel Grid.Row="1"
+              <WrapPanel Grid.Row="1"
                    VerticalAlignment="Center">
             <TextBlock Text="Поиск"
-         FontSize="26"
-         Margin="10,0">
+                       FontSize="26"
+                       Margin="10,0">
 
             </TextBlock>
             <TextBox x:Name="txtSearch"
@@ -41,7 +41,7 @@
                       SelectionChanged="cmbSort_SelectionChanged">
 
             </ComboBox>
-        </WrapPanel>
+                </WrapPanel>
         <ListView x:Name="lvProduct"
                   Grid.Row="2">
                 <ListView.View>

@@ -27,9 +27,12 @@ namespace _27._01._2022.EF
         public string Warranty { get; set; }
         public bool Status { get; set; }
         public Nullable<System.DateTime> DateOfIssue { get; set; }
+        public Nullable<int> IDStatus { get; set; }
+        public bool IsDeleted { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClientProduct> ClientProduct { get; set; }
+        public virtual Status Status1 { get; set; }
         public virtual Type Type { get; set; }
     }
 }

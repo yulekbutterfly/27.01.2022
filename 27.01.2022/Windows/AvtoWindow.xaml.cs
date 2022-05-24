@@ -28,7 +28,7 @@ namespace _27._01._2022.Windows
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
           EF.Employee authUser = ClassHelper.AppData.Context.Employee.ToList().
-                Where(i=>i.Login == txtLogin.Text&& i.Password == txtPassword.Text).
+                Where(i=>i.Login == txtLogin.Text && i.Password == txtPassword.Password).
                 FirstOrDefault();
             if(authUser !=null)
             {

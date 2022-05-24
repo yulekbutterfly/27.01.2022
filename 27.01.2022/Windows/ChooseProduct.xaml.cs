@@ -11,26 +11,29 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static _27._01._2022.ClassHelper.DataTransmission;
 
 namespace _27._01._2022.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для ClientProductWindow.xaml
+    /// Логика взаимодействия для ChooseProduct.xaml
     /// </summary>
-    public partial class ClientProductWindow : Window
+    public partial class ChooseProduct : Window
     {
-        public ClientProductWindow()
+        public ChooseProduct()
         {
             InitializeComponent();
-            lvClientProduct.ItemsSource = ClassHelper.AppData.Context.ClientProduct.ToList();
+            lvProduct.ItemsSource = ClassHelper.AppData.Context.Product.ToList();
+
         }
 
-        private void btn_registr_Click(object sender, RoutedEventArgs e)
+        private void lvProduct_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Arenda arendaWindow = new Arenda();
-            this.Hide();
-            arendaWindow.ShowDialog();
-            this.Show();
+                GetProduct = lvProduct.SelectedItem as EF.Product;
+                this.Close();
         }
+
+
+
     }
 }

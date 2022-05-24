@@ -66,6 +66,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ClassHelper\AppData.cs" />
+    <Compile Include="ClassHelper\DataTransmission.cs" />
     <Compile Include="ClassHelper\Employee.cs" />
     <Compile Include="EF\Client.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -109,6 +110,9 @@
     <Compile Include="EF\sp_helpdiagrams_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="EF\Status.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="EF\sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -121,8 +125,20 @@
     <Compile Include="Windows\AddEmployeeWindow.xaml.cs">
       <DependentUpon>AddEmployeeWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Arenda.xaml.cs">
+      <DependentUpon>Arenda.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AvtoWindow.xaml.cs">
       <DependentUpon>AvtoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ChooseClient.xaml.cs">
+      <DependentUpon>ChooseClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ChooseEmployee.xaml.cs">
+      <DependentUpon>ChooseEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ChooseProduct.xaml.cs">
+      <DependentUpon>ChooseProduct.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ClientProductWindow.xaml.cs">
       <DependentUpon>ClientProductWindow.xaml</DependentUpon>
@@ -159,6 +175,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\AddEmployeeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Arenda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ChooseClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ChooseEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ChooseProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -241,6 +273,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="App.Config" />
     <None Include="EF\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
@@ -251,7 +284,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Windows\App.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />

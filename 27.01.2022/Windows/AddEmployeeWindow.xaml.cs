@@ -46,6 +46,7 @@ namespace _27._01._2022.Windows
             Email.Text = employee.Email;
             Login.Text = employee.Login;
             Password.Text = employee.Password;
+            cmbRole.SelectedIndex =Convert.ToInt32(employee.IDRole - 1);
             //cmbRole.SelectedIndex = employee.IDRole - 1; 
 
             tbTitle.Text = "Изменение данных работника";
@@ -56,8 +57,9 @@ namespace _27._01._2022.Windows
            
         }
 
-            private void btnadd_Click(object sender, RoutedEventArgs e)
-        { 
+       private void btnadd_Click(object sender, RoutedEventArgs e)
+            
+       {
             bool IsValidEmail(string email)
             {
                 string pattern = "[.\\-_a-z0-9]+@([a-z0-9][\\-a-z0-9]+\\.)+[a-z]{2,6}";
@@ -107,11 +109,11 @@ namespace _27._01._2022.Windows
                 MessageBox.Show("Поле Почта заполнено неккорректно", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            if (!Int32.TryParse(Phone.Text, out int res))
-            {
-                MessageBox.Show("Поле Телефон должно состоять только из цифр", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
+            //if (!Int32.TryParse(Phone.Text, out int res))
+            //{
+            //    MessageBox.Show("Поле Телефон должно состоять только из цифр", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+            //    return;
+            //}
 
             if (isEdit) //Изменение пользователя 
 
@@ -121,14 +123,14 @@ namespace _27._01._2022.Windows
                 {
                     return;
                 }
-             try
+                try
                 {
                     editEmployee.Lname = Lname.Text;
                     editEmployee.FName = FName.Text;
                     editEmployee.MName = MName.Text;
                     editEmployee.Phone = Phone.Text;
                     editEmployee.Email = Email.Text;
-                    editEmployee.IDRole = (cmbRole.SelectedItem as EF.Role).ID;
+                    editEmployee.IDRole = cmbRole.SelectedIndex+1;
                     editEmployee.Login = Login.Text;
                     editEmployee.Password = Password.Text;
 
@@ -136,22 +138,10 @@ namespace _27._01._2022.Windows
                     MessageBox.Show("Пользователь изменён");
                     this.Close();
                 }
-            catch (Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-                editEmployee.Lname = Lname.Text;
-                editEmployee.FName = FName.Text;
-                editEmployee.MName = MName.Text;
-                editEmployee.Phone = Phone.Text;
-                editEmployee.Email = Email.Text;
-                editEmployee.IDRole = (cmbRole.SelectedItem as EF.Role).ID;
-                editEmployee.Login = Login.Text;
-                editEmployee.Password = Password.Text;
-
-                ClassHelper.AppData.Context.SaveChanges();
-                MessageBox.Show("Пользователь изменён");
-                this.Close();
             }
             else
             {
@@ -180,7 +170,12 @@ namespace _27._01._2022.Windows
                 {
                     MessageBox.Show(ex.Message.ToString());
                 }
-            }
+           }   
+        
+        }
+
+        private void Phone_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
         }
     }
