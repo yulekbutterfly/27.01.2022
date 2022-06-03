@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_27._01._2022.Windows"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Window7" Height="700" Width="800">
     <Grid>
 
@@ -90,84 +91,101 @@
                        Grid.RowSpan="2"/>
         <ComboBox x:Name="cmbGnd"
                  Grid.Column="1"
+                 FontSize="25"
                  Grid.Row="9"
                  Width="350"
                  Height="50"
                  VerticalAlignment="Stretch" 
+                 SelectionChanged="cmbGnd_SelectionChanged_1"
                >
 
         </ComboBox>
 
 
         <Button x:Name="btnaddClients"
-           
-              Grid.Row="11"
+                Grid.Row="11"
                 Width="250" 
+                Height="45"
                 Content="Добавить"
                 FontSize="20"
-                VerticalAlignment="Stretch"
-                HorizontalAlignment="Center" 
-                
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Center"
                 Click="btnaddClients_Click"/>
-            <TextBox x:Name="Lname"
+
+        <TextBox x:Name="LNameClient"
                  Grid.Column="1"
+                 FontSize="25"
                  Grid.Row="1"
                  Width="350"
                  Height="50"
+                 PreviewTextInput="FIO_PreviewTextInput"
                  VerticalAlignment="Stretch">
 
-            </TextBox>
+        </TextBox>
             <TextBox x:Name="FName"
                  Grid.Column="1"
+                 FontSize="25"
                  Grid.Row="2"
                  Width="350"
                  Height="50"
+                 PreviewTextInput="FIO_PreviewTextInput"
                  VerticalAlignment="Stretch">
 
             </TextBox>
             <TextBox x:Name="MName"
                  Grid.Column="1"
+                 FontSize="25"
                  Grid.Row="3"
                  Width="350"
                  Height="50"
+                 PreviewTextInput="FIO_PreviewTextInput"
                  VerticalAlignment="Stretch">
 
             </TextBox>
             <TextBox x:Name="Phone"
                  Grid.Column="1"
+                 FontSize="25"
                  Grid.Row="4"
                  Width="350"
                  Height="50"
+                 PreviewTextInput="Numbers_PreviewTextInput"
                  VerticalAlignment="Stretch">
 
             </TextBox>
             <TextBox x:Name="Email"
                  Grid.Column="1"
+                 FontSize="25"
                  Grid.Row="5"
                  Width="350"
                  Height="50"
+                 PreviewTextInput="Email_PreviewTextInput"
                  VerticalAlignment="Stretch">
 
             </TextBox>
             <TextBox x:Name="SPassporta"
                  Grid.Column="1"
+                 FontSize="25"
                  Grid.Row="6"
                  Width="350"
                  Height="50"
+                 PreviewTextInput="Numbers_PreviewTextInput"
                  VerticalAlignment="Stretch">
 
             </TextBox>
         <TextBox x:Name="NPassporta"
                  Grid.Column="1"
+                 FontSize="25"
                  Grid.Row="7"
                  Width="350"
                  Height="50"
+                 PreviewTextInput="Numbers_PreviewTextInput"
                  VerticalAlignment="Stretch">
 
 
             </TextBox>
             <DatePicker x:Name="Birth"
                  Grid.Column="1"
+                 FontSize="25"
                  Grid.Row="8"
                  Width="350"
                  Height="50"

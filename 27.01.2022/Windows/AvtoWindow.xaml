@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_27._01._2022.Windows"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="AvtoWindow" Height="500" Width="400">
     <Grid>
         <Grid.ColumnDefinitions>

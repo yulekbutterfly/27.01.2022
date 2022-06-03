@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_27._01._2022.Windows"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="ChooseEmployee" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
@@ -35,7 +36,7 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border Background="Aqua"
+                    <Border Background="#9ACEEB"
                 Width="700"
                 Height="100"
                 BorderThickness="1"

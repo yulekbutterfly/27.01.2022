@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_27._01._2022.Windows"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="ProductWindow" Height="600" Width="1000">
    
         <Grid>
@@ -43,7 +44,7 @@
             </ComboBox>
                 </WrapPanel>
         <ListView x:Name="lvProduct"
-                  Grid.Row="2">
+                  Grid.Row="2" MouseDoubleClick="lvProduct_MouseDoubleClick">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Код" Width="60" DisplayMemberBinding="{Binding ID}"/>

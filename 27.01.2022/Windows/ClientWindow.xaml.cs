@@ -94,13 +94,15 @@ namespace _27._01._2022.Windows
 
         private void btn_addClient_Click(object sender, RoutedEventArgs e)
         {
-
+            lvClient.ItemsSource = ClassHelper.AppData.Context.Client.ToList();
             AddingClient addingclient = new AddingClient();
             this.Hide();
             addingclient.ShowDialog();
-            this.Show();
-            lvClient.ItemsSource = ClassHelper.AppData.Context.Client.ToList();
-            Filter();
+            this.ShowDialog();
+            //Filter();
+            //this.Close();
+
+
         }
 
 
@@ -122,14 +124,14 @@ namespace _27._01._2022.Windows
             {
                 //try
                 //{
-                if (lvClient.SelectedItem is EF.Employee)
+                if (lvClient.SelectedItem is EF.Client)
                 {
                     var resmsg = MessageBox.Show("Удалить клиента?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question);
                     if (resmsg == MessageBoxResult.No)
                     {
                         return;
                     }
-                    var stf = lvClient.SelectedItem as EF.Employee;
+                    var stf = lvClient.SelectedItem as EF.Client;
                     stf.IsDeleted = true;
                     ClassHelper.AppData.Context.SaveChanges();
                     MessageBox.Show("Клиент успешно удален", "Удаление", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -145,8 +147,11 @@ namespace _27._01._2022.Windows
 
 
 
-        private void lvEmployee_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
+      
+
+        private void lvClient_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {  
+            
             if (lvClient.SelectedItem is EF.Client)
             {
                  var client  = lvClient.SelectedItem as EF.Client;
@@ -154,8 +159,8 @@ namespace _27._01._2022.Windows
                 addingclient.ShowDialog();
                 Filter();
             }
-        }
 
+        }
     }
 
 

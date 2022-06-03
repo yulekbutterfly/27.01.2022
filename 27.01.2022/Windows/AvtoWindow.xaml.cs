@@ -33,7 +33,8 @@ namespace _27._01._2022.Windows
             if(authUser !=null)
             {
                 MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
+                this.Close();
+                mainWindow.ShowDialog();
                 this.Close();
 
 

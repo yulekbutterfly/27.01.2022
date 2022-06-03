@@ -28,6 +28,7 @@ namespace _27._01._2022.Windows
     {
         private bool isEdit;
         ClientProduct editSale = new ClientProduct();
+         EF.ClientProduct globalRent;
 
         public Arenda()
         {
@@ -35,13 +36,15 @@ namespace _27._01._2022.Windows
             
 
             isEdit = false;
-        }
 
+        }
+     
         public Arenda(ClientProduct ClientProduct)
         {
             InitializeComponent();
 
             // Заполнение полей свойствами аргумента sale 
+
             
 
 
@@ -54,6 +57,7 @@ namespace _27._01._2022.Windows
             editSale = ClientProduct;
         }
 
+
         private void btnAddNewSale_Click(object sender, RoutedEventArgs e)
         {
             if (isEdit)
@@ -65,19 +69,7 @@ namespace _27._01._2022.Windows
                     return;
                 }
 
-                try
-                {
-
-                    
-
-                    AppData.Context.SaveChanges();
-                    MessageBox.Show("Запись изменена!", "Редактирование");
-                    Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message.ToString(), "Ошибка!");
-                }
+                
             }
             else
             {
@@ -106,11 +98,12 @@ namespace _27._01._2022.Windows
             ChooseClient chooseClient = new ChooseClient();
             this.Hide();
             chooseClient.ShowDialog();
-            this.Show();
-            if(GetClient !=null)
+            if (GetClient != null)
             {
                 btnClient.Content = GetClient.Lname;
             }
+            this.ShowDialog();
+            
             
         }
 
@@ -119,11 +112,16 @@ namespace _27._01._2022.Windows
             ChooseProduct chooseProduct= new ChooseProduct();
             this.Hide();
             chooseProduct.ShowDialog();
-            this.Show();
             if(GetProduct !=null)
             {
                 btnProduct.Content = GetProduct.NameProduct;
+                if (dpSaleDate.SelectedDate != null && dpReturnDate.SelectedDate != null)
+                {
+                    tbCost.Text = Calculations.CostOfRent(Convert.ToDateTime(dpSaleDate.SelectedDate), Convert.ToDateTime(dpReturnDate.SelectedDate), GetProduct.Price).ToString();
+
+                }
             }
+            this.ShowDialog();
         }
 
         private void btnEmployee_Click(object sender, RoutedEventArgs e)
@@ -131,10 +129,28 @@ namespace _27._01._2022.Windows
             ChooseEmployee chooseEmployee= new ChooseEmployee();
             this.Hide();
             chooseEmployee.ShowDialog();
-            this.Show();
             if(GetEmployee != null)
             {
                 btnEmployee.Content = GetEmployee.Lname;
+            }
+            this.ShowDialog();
+        }
+
+        private void dpSaleDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (GetProduct != null && dpReturnDate.SelectedDate != null)
+            {
+                tbCost.Text = Calculations.CostOfRent(Convert.ToDateTime(dpSaleDate.SelectedDate), Convert.ToDateTime(dpReturnDate.SelectedDate), GetProduct.Price).ToString();
+
+            }
+        }
+
+        private void dpReturnDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (GetProduct != null && dpSaleDate.SelectedDate != null)
+            {
+                tbCost.Text = Calculations.CostOfRent(Convert.ToDateTime(dpSaleDate.SelectedDate), Convert.ToDateTime(dpReturnDate.SelectedDate), GetProduct.Price).ToString();
+
             }
         }
     }

@@ -22,15 +22,38 @@ namespace _27._01._2022.Windows
         public ClientProductWindow()
         {
             InitializeComponent();
-            lvClientProduct.ItemsSource = ClassHelper.AppData.Context.ClientProduct.ToList();
+            lvClientProduct.ItemsSource = ClassHelper.AppData.Context.ClientProduct.Where(i=>i.Product.IDStatus != 4).ToList();
         }
 
         private void btn_registr_Click(object sender, RoutedEventArgs e)
         {
             Arenda arendaWindow = new Arenda();
+            lvClientProduct.ItemsSource = ClassHelper.AppData.Context.ClientProduct.ToList();
             this.Hide();
             arendaWindow.ShowDialog();
-            this.Show();
+            this.ShowDialog();
+
         }
+
+        private void lvClientProduct_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(lvClientProduct.SelectedItem is EF.ClientProduct)
+            {
+                btnBack.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (lvClientProduct.SelectedItem is EF.ClientProduct)
+            {
+
+                var rent= lvClientProduct.SelectedItem as EF.ClientProduct;
+                BackWindow backWindow = new BackWindow(rent);
+                backWindow.ShowDialog();
+            }
+        }
+
+        
     }
 }

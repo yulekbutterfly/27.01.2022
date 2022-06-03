@@ -94,6 +94,7 @@ namespace _27._01._2022.Windows
         {
             GetEmployee = lvEmployee.SelectedItem as EF.Employee;
             this.Close();
+            this.Hide();
         }
     }
 }

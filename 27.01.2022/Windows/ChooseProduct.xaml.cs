@@ -31,6 +31,7 @@ namespace _27._01._2022.Windows
         {
                 GetProduct = lvProduct.SelectedItem as EF.Product;
                 this.Close();
+                this.Hide();
         }
 
 

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_27._01._2022.Windows"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="ClientWindow" Height="450" Width="830">
     <Grid>
         <Grid.RowDefinitions>
@@ -21,8 +22,8 @@
         <WrapPanel Grid.Row="1"
                    VerticalAlignment="Center">
             <TextBlock Text="Поиск"
-         FontSize="26"
-         Margin="10,0">
+                       FontSize="26"
+                       Margin="10,0">     
 
             </TextBlock>
             <TextBox x:Name="txtSearch"
@@ -42,7 +43,9 @@
             </ComboBox>
         </WrapPanel>
         <ListView x:Name="lvClient"
-                  Grid.Row="2">
+                  Grid.Row="2"
+                  KeyDown="lvClient_KeyDown"
+                  MouseDoubleClick="lvClient_MouseDoubleClick">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Код" Width="60" DisplayMemberBinding="{Binding ID}"/>
@@ -70,7 +73,8 @@
                 Height="50"
                 Content="Добавить клиента"
                 FontSize="25"
-                Click="btn_addClient_Click" Grid.RowSpan="2">
+                Click="btn_addClient_Click"
+                Grid.RowSpan="2">
 
         </Button>
     </Grid>

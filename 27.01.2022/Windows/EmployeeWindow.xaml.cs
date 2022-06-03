@@ -88,10 +88,10 @@ namespace _27._01._2022.Windows
         private void btn_addempl_Click(object sender, RoutedEventArgs e)
         {
             AddEmployeeWindow addemployeeWindow = new AddEmployeeWindow();
+            lvEmployee.ItemsSource = ClassHelper.AppData.Context.Employee.ToList();
             this.Hide();
             addemployeeWindow.ShowDialog();
-            this.Show();
-            lvEmployee.ItemsSource = ClassHelper.AppData.Context.Employee.ToList();
+            this.ShowDialog();
             Filter();
         }
 

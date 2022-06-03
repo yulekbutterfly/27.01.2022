@@ -28,7 +28,7 @@ namespace _27._01._2022.EF
         public string Email { get; set; }
         public string PassportS { get; set; }
         public string PassportN { get; set; }
-        public Nullable<System.DateTime> DateOfBirth { get; set; }
+        public System.DateTime DateOfBirth { get; set; }
         public int IDGender { get; set; }
         public bool IsDeleted { get; set; }
     

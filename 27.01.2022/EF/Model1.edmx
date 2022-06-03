@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Lname" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="FName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="MName" Type="nvarchar" MaxLength="100" Nullable="false" />
@@ -17,7 +17,7 @@
           <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="PassportS" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PassportN" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
           <Property Name="IDGender" Type="int" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
         </EntityType>
@@ -25,19 +25,20 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IDClient" Type="int" Nullable="false" />
           <Property Name="IDEmployee" Type="int" Nullable="false" />
           <Property Name="IDProduct" Type="int" Nullable="false" />
           <Property Name="SaleStartDate" Type="date" />
           <Property Name="SaleEndDate" Type="date" />
           <Property Name="TotalCost" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Lname" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="FName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="MName" Type="nvarchar" MaxLength="100" Nullable="false" />
@@ -60,7 +61,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IDClientProduct" Type="int" Nullable="false" />
           <Property Name="DateStart" Type="date" Nullable="false" />
           <Property Name="DateReturn" Type="date" Nullable="false" />
@@ -69,7 +70,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameProduct" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="IDType" Type="int" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
@@ -83,7 +84,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameRole" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="Status">
@@ -107,7 +108,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameType" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <Association Name="FK_Client_Gender">
@@ -374,7 +375,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Lname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="FName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="MName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -382,7 +383,7 @@
           <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="PassportS" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PassportN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="IDGender" Type="Int32" Nullable="false" />
           <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Gender" Relationship="ArendaModel.FK_Client_Gender" FromRole="Client" ToRole="Gender" />
@@ -392,13 +393,14 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IDClient" Type="Int32" Nullable="false" />
           <Property Name="IDEmployee" Type="Int32" Nullable="false" />
           <Property Name="IDProduct" Type="Int32" Nullable="false" />
           <Property Name="SaleStartDate" Type="DateTime" Precision="0" />
           <Property Name="SaleEndDate" Type="DateTime" Precision="0" />
           <Property Name="TotalCost" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Client" Relationship="ArendaModel.FK_ClientProduct_Client1" FromRole="ClientProduct" ToRole="Client" />
           <NavigationProperty Name="Employee" Relationship="ArendaModel.FK_ClientProduct_Employee" FromRole="ClientProduct" ToRole="Employee" />
           <NavigationProperty Name="Product" Relationship="ArendaModel.FK_ClientProduct_Product" FromRole="ClientProduct" ToRole="Product" />
@@ -408,7 +410,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Lname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="FName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="MName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -434,7 +436,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IDClientProduct" Type="Int32" Nullable="false" />
           <Property Name="DateStart" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="DateReturn" Type="DateTime" Nullable="false" Precision="0" />
@@ -444,7 +446,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameProduct" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="IDType" Type="Int32" Nullable="false" />
           <Property Name="Price" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
@@ -461,7 +463,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameRole" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Employee" Relationship="ArendaModel.FK_Employee_Role" FromRole="Role" ToRole="Employee" />
         </EntityType>
@@ -487,7 +489,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameType" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Product" Relationship="ArendaModel.FK_Product_Type" FromRole="Type" ToRole="Product" />
         </EntityType>
@@ -637,6 +639,7 @@
           <EntitySetMapping Name="ClientProduct">
             <EntityTypeMapping TypeName="ArendaModel.ClientProduct">
               <MappingFragment StoreEntitySet="ClientProduct">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
                 <ScalarProperty Name="SaleEndDate" ColumnName="SaleEndDate" />
                 <ScalarProperty Name="SaleStartDate" ColumnName="SaleStartDate" />

@@ -31,28 +31,28 @@ namespace _27._01._2022
             EmployeeWindow employeeWindow = new EmployeeWindow();
             this.Hide();
             employeeWindow.ShowDialog();
-            this.Show();
+            this.ShowDialog();
         }
         private void btnClient_Click(object sender, RoutedEventArgs e)
         {
             ClientWindow clientWindow = new ClientWindow();
             this.Hide();
            clientWindow.ShowDialog();
-            this.Show();
+            this.ShowDialog();
         }
         private void btnProduct_Click(object sender, RoutedEventArgs e)
         {
             ProductWindow productWindow = new ProductWindow();
             this.Hide();
             productWindow.ShowDialog();
-            this.Show();
+            this.ShowDialog();
         }
         private void btnClientProduct_Click(object sender, RoutedEventArgs e)
         {
             ClientProductWindow clientproductWindow = new ClientProductWindow();
             this.Hide();
             clientproductWindow.ShowDialog();
-            this.Show();
+            this.ShowDialog();
         }
 
 

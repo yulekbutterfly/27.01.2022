@@ -1,4 +1,4 @@
-﻿<Window x:Class="_27._01._2022.Windows.Arenda"
+﻿<Window x:Class="_27._01._2022.Windows.BackWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,27 +6,26 @@
         xmlns:local="clr-namespace:_27._01._2022.Windows"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Arenda" Height="800" Width="900">
-
+        Title="BackWindow" Height="800" Width="900">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1.2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1.2*"/>
 
         </Grid.RowDefinitions>
 
         <TextBlock x:Name="tbTitle"
-                   Text="Добавление записи"
+                   Text="Возврат"
                    Grid.Row="0"
                    Grid.ColumnSpan="2"
                    VerticalAlignment="Center"
@@ -55,7 +54,7 @@
                    Margin="0,0,20,0"
                    FontSize="16"/>
         <TextBlock Grid.Row="4"
-                   Text="Дата проджаи"
+                   Text="Дата продажи"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Right"
                    Margin="0,0,20,0"
@@ -72,45 +71,52 @@
                    HorizontalAlignment="Right"
                    Margin="0,0,20,0"
                    FontSize="16"/>
-
         <!-- Правая часть -->
-        <Button   x:Name="btnClient"
+        <TextBlock   x:Name="tbClient"
                     Width="240"
-                    Content="Выбрать"
                     Grid.Column="1"
                     Grid.Row="1"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Left"
-                    VerticalContentAlignment="Center"
                     FontSize="16" 
-                    Margin="50,0,0,0" Click="btnClient_Click"/>
-        <Button x:Name="btnProduct"
-                 Width="240"
-                 Grid.Column="1"
-                Content="Выбрать"
-                 Grid.Row="2"
-                 VerticalAlignment="Center"
-                 HorizontalAlignment="Left"
-                 VerticalContentAlignment="Center"
-                 FontSize="16" Margin="50,0,0,0" Click="btnProduct_Click"/>
-        <Button x:Name="btnEmployee"
-                 Width="240"
-                Content="Выбрать"
-                 Grid.Column="1"
-                 Grid.Row="3"
-                 VerticalAlignment="Center"
-                 HorizontalAlignment="Left"
-                 VerticalContentAlignment="Center"
-                 FontSize="16" Margin="50,0,0,0" Click="btnEmployee_Click"/>
-        <DatePicker x:Name="dpSaleDate"
-                 Width="240"
-                 Grid.Column="1"
-                 Grid.Row="4"
-                 VerticalAlignment="Center"
-                 HorizontalAlignment="Left"
-                 VerticalContentAlignment="Center"
-                 FontSize="16" Margin="50,0,0,0" SelectedDateChanged="dpSaleDate_SelectedDateChanged"/>
-        <TextBlock  x:Name="tbCost"
+                    Margin="50,0,0,0"
+                     Text="Клиент"
+                     
+                     />
+        <TextBlock   x:Name="tbProduct"
+                    Width="240"
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    FontSize="16" 
+                    Margin="50,0,0,0"
+                     Text="Продукт"
+                     
+                     />
+        <TextBlock   x:Name="tbEmployee"
+                    Width="240"
+                    Grid.Column="1"
+                    Grid.Row="3"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    FontSize="16" 
+                    Margin="50,0,0,0"
+                     Text="Работник"
+                     
+                     />
+        <TextBlock   x:Name="tbDateOfSell"
+                    Width="240"
+                    Grid.Column="1"
+                    Grid.Row="4"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    FontSize="16" 
+                    Margin="50,0,0,0"
+                     Text="Дата продажи"
+                     
+                     />
+        <TextBlock   x:Name="tbCost"
                     Width="240"
                     Grid.Column="1"
                     Grid.Row="6"
@@ -118,7 +124,7 @@
                     HorizontalAlignment="Left"
                     FontSize="16" 
                     Margin="50,0,0,0"
-                    Text="Стоимость"
+                     Text="Стоимость"
                      
                      />
         <DatePicker x:Name="dpReturnDate"
@@ -131,10 +137,10 @@
                  FontSize="16" Margin="50,0,0,0" SelectedDateChanged="dpReturnDate_SelectedDateChanged"/>
 
         <Button     
-            x:Name="btnAddNewSale"
-            Content="Создать"
+            x:Name="btnBackRent"
+            Content="Вернуть"
             Width="200"
-            
+             
             Height="35"
             Grid.ColumnSpan="2"
             Grid.Row="14"
@@ -143,10 +149,10 @@
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Center"
             Margin="10 0"               
-            FontSize="19"
-                    
-            Click="btnAddNewSale_Click" 
-            BorderBrush="{x:Null}">
+            FontSize="19" Click="btnBackRent_Click">
+
+            <!--Click="btnAddNewSale_Click" 
+            BorderBrush="{x:Null}">-->
         </Button>
     </Grid>
 </Window>

@@ -27,6 +27,7 @@ namespace _27._01._2022.EF
         public Nullable<System.DateTime> SaleStartDate { get; set; }
         public Nullable<System.DateTime> SaleEndDate { get; set; }
         public Nullable<decimal> TotalCost { get; set; }
+        public bool IsDeleted { get; set; }
     
         public virtual Client Client { get; set; }
         public virtual Employee Employee { get; set; }

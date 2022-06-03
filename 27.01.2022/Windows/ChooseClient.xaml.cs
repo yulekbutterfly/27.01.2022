@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _27._01._2022.EF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -91,8 +92,12 @@ namespace _27._01._2022.Windows
 
         private void lvClient_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            GetClient = lvClient.SelectedItem as EF.Client;
-            this.Close();
+            if(lvClient.SelectedItem is EF.Client)
+            {             
+                GetClient = lvClient.SelectedItem as EF.Client;
+                this.Close();
+            }
+            
         }
     }
 }

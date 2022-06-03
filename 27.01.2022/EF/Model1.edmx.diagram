@@ -5,16 +5,16 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="41979957ecbf4773a5eed3c244bbe551" Name="Diagram1" ZoomLevel="73">
-        <EntityTypeShape EntityType="ArendaModel.Client" Width="1.5" PointX="3" PointY="8.875" />
+        <EntityTypeShape EntityType="ArendaModel.Client" Width="1.5" PointX="3" PointY="7" />
         <EntityTypeShape EntityType="ArendaModel.ClientProduct" Width="1.5" PointX="5.25" PointY="1.125" />
-        <EntityTypeShape EntityType="ArendaModel.Employee" Width="1.5" PointX="3" PointY="13.25" />
-        <EntityTypeShape EntityType="ArendaModel.Gender" Width="1.5" PointX="0.75" PointY="9.875" />
-        <EntityTypeShape EntityType="ArendaModel.History" Width="1.5" PointX="7.5" PointY="1.625" />
-        <EntityTypeShape EntityType="ArendaModel.Product" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="ArendaModel.Role" Width="1.5" PointX="0.75" PointY="14.125" />
-        <EntityTypeShape EntityType="ArendaModel.Status" Width="1.5" PointX="0.75" PointY="1.875" />
-        <EntityTypeShape EntityType="ArendaModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="5.75" />
-        <EntityTypeShape EntityType="ArendaModel.Type" Width="1.5" PointX="0.75" PointY="5.875" />
+        <EntityTypeShape EntityType="ArendaModel.Employee" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="ArendaModel.Gender" Width="1.5" PointX="0.75" PointY="8" />
+        <EntityTypeShape EntityType="ArendaModel.History" Width="1.5" PointX="7.5" PointY="1.75" />
+        <EntityTypeShape EntityType="ArendaModel.Product" Width="1.5" PointX="3" PointY="11.625" />
+        <EntityTypeShape EntityType="ArendaModel.Role" Width="1.5" PointX="0.75" PointY="2" />
+        <EntityTypeShape EntityType="ArendaModel.Status" Width="1.5" PointX="0.75" PointY="11.25" />
+        <EntityTypeShape EntityType="ArendaModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="5.75" />
+        <EntityTypeShape EntityType="ArendaModel.Type" Width="1.5" PointX="0.75" PointY="13.625" />
         <AssociationConnector Association="ArendaModel.FK_Client_Gender" />
         <AssociationConnector Association="ArendaModel.FK_ClientProduct_Client1" />
         <AssociationConnector Association="ArendaModel.FK_ClientProduct_Employee" />

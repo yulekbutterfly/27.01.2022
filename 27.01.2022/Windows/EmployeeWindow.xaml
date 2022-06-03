@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_27._01._2022.Windows"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="EmployeeWindow" Height="600" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
@@ -21,8 +22,9 @@
         <ListView x:Name="lvEmployee"
                   Grid.Row="2"
                   ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                  KeyDown="lvEmployee_KeyDown" MouseDoubleClick="lvEmployee_MouseDoubleClick"
-                  >
+                  KeyDown="lvEmployee_KeyDown"
+                  MouseDoubleClick="lvEmployee_MouseDoubleClick">
+
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel>
@@ -35,7 +37,7 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border Background="Aqua"
+                    <Border Background="#9ACEEB"
                 Width="700"
                 Height="100"
                 BorderThickness="1"
@@ -50,6 +52,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
@@ -75,48 +78,62 @@
 
                             <!--2-->
                             <TextBlock Text="Фамилия "
-                           FontSize="18"
+                           FontSize="16"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left"
                            Margin="10 0 "
                            Grid.Column="1"
                            Grid.Row="0"/>
                             <TextBlock Text="Имя "
-                           FontSize="18"
+                           FontSize="16"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left"
                            Margin="10 0 "
                            Grid.Column="1"
                            Grid.Row="1"/>
                             <TextBlock Text="Отчество "
-                           FontSize="18"
+                           FontSize="16"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left"
                            Margin="10 0 "
                            Grid.Column="1"
                            Grid.Row="2"/>
+                            <TextBlock Text="Роль"
+                           FontSize="16"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="10 0 "
+                           Grid.Column="1"
+                           Grid.Row="3"/>
                             <!--3-->
                             <TextBlock Text="{Binding Lname}"
-                           FontSize="18"
+                           FontSize="16"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left"
                            Margin="10 0 "
                            Grid.Column="2"
                            Grid.Row="0"/>
                             <TextBlock Text="{Binding FName}"
-                           FontSize="18"
+                           FontSize="16"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left"
                            Margin="10 0 "
                            Grid.Column="2"
                            Grid.Row="1"/>
                             <TextBlock Text="{Binding MName}"
-                           FontSize="18"
+                           FontSize="16"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left"
                            Margin="10 0 "
                            Grid.Column="2"
                            Grid.Row="2"/>
+                            <TextBlock Text="{Binding Role.NameRole}"
+                           FontSize="16"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="10 0 "
+                           Grid.Column="2"
+                           Grid.Row="3"/>
 
 
 

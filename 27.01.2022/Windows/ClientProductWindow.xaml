@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_27._01._2022.Windows"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="ClientProductWindow" Height="450" Width="600">
     <Grid>
         <Grid.RowDefinitions>
@@ -20,13 +21,16 @@
                    VerticalAlignment="Center"
                   FontSize="20"/>
         <ListView x:Name="lvClientProduct"
-                  Grid.Row="2">
+                  Grid.Row="2" 
+                  SelectionChanged="lvClientProduct_SelectionChanged"
+                  
+                  >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Код" Width="150" DisplayMemberBinding="{Binding ID}"/>
-                    <GridViewColumn Header="Код Клиента " Width="150" DisplayMemberBinding="{Binding IDClient}"/>
-                    <GridViewColumn Header="Код Сотрудника" Width="150" DisplayMemberBinding="{Binding IDEmployee}"/>
-                    <GridViewColumn Header="Код Товара" Width="150" DisplayMemberBinding="{Binding IDProduct}"/>
+                    <GridViewColumn Header="Фамилия клиента " Width="150" DisplayMemberBinding="{Binding Client.Lname}"/>
+                    <GridViewColumn Header="Фамилия сотрудника" Width="150" DisplayMemberBinding="{Binding Employee.Lname}"/>
+                    <GridViewColumn Header="Название товара" Width="150" DisplayMemberBinding="{Binding Product.NameProduct}"/>
                     <GridViewColumn Header="Дата начала аренды" Width="150" DisplayMemberBinding="{Binding SaleStartDate}"/>
                     <GridViewColumn Header="Дата конца аренды" Width="150" DisplayMemberBinding="{Binding SaleEndDate}"/>
                     <GridViewColumn Header="Итоговая стоимость" Width="150" DisplayMemberBinding="{Binding TotalCost}"/>
@@ -38,16 +42,35 @@
 
 
         </ListView>
-        <Button x:Name="btn_registr"
+        <StackPanel
+                    Grid.Row="3"
+                    Orientation="Horizontal"
+                HorizontalAlignment="Center"
+            >
+            <Button x:Name="btn_registr"
                     Content="Оформить товар в аренду"
                     Width="200"
-                    Height="50"
+                    Height="40"
                     FontSize="16"
                     Margin="5"
-                    Grid.Row="3"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     Click="btn_registr_Click"/>
+            <Button x:Name="btnBack"
+                    Content="Вернуть товар"
+                    Width="200"
+                    Height="40"
+                    FontSize="16"
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Visibility="Collapsed"
+                    Click="btnBack_Click"
+                    />
+         
+
+
+        </StackPanel>
         
 
     </Grid>

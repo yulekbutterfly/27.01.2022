@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_27._01._2022.Windows"
         mc:Ignorable="d"
-        Title="AddEmployeeWindow" Height="600" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="AddEmployeeWindow" Height="650" Width="800">
     <Grid>
 
 
@@ -24,116 +25,164 @@
             <RowDefinition Height="55"/>
             <RowDefinition Height="55"/>
             <RowDefinition Height="55"/>
+            <RowDefinition Height="55"/>
         </Grid.RowDefinitions>
-        
+
         <TextBlock x:Name ="tbTitle"  Text="Добавление Сотрудника"
                        HorizontalAlignment="Center"
+                       VerticalAlignment="Top"
                        FontSize="40"
-                       Margin="40,10,30,50" 
+                       
                        Grid.ColumnSpan="2"
-                        Width="499"
+                        Width="600"
                         Height="60"
                        Grid.Row="0" 
                    Grid.RowSpan="2"/>
         <TextBlock Text="Фамилия"
-                       HorizontalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
                        FontSize="30"
                        Margin="80,10,50,0"
                         Width="144"
                         Grid.Row="1"/>
         <TextBlock Text="Имя"
-                       HorizontalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
                        FontSize="30"
                       Margin="80,10,50,0"
                         Width="144"
                         Grid.Row="2"/>
         <TextBlock Text="Отчество"
-                       HorizontalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
                        FontSize="30"
                        Margin="80,10,50,0"
                         Width="144"
                         Grid.Row="3"/>
         <TextBlock Text="Телефон"
-                       HorizontalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
                        FontSize="30"
                        Margin="80,10,50,0"
                         Width="144"
                         Grid.Row="4"/>
         <TextBlock Text="Роль"
-                       HorizontalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
                        FontSize="30"
                        Margin="80,10,50,0"
                         Width="164"
                         Grid.Row="5"/>
         <TextBlock Text="Почта "
-                       HorizontalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
                        FontSize="30"
                       Margin="80,10,50,0"
                         Width="164"
                         Grid.Row="6"/>
         <TextBlock Text="Логин"
-                       HorizontalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="top"
                        FontSize="30"
                       Margin="80,10,50,0"
                         Width="164"
                         Grid.Row="7" Grid.RowSpan="2"/>
         <TextBlock Text="Пароль "
-                       HorizontalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="top"
                        FontSize="30"
                     Margin="80,10,50,0"
                         Width="164"
                         Grid.Row="8" Grid.RowSpan="2"/>
+        <TextBlock Text="Добавить фото"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       FontSize="30"
+                    Margin="80,10,0,0"
+                        Width="248"
+                        Grid.Row="9"/>
+        
+        <Button x:Name="btnaddphoto"
+                Grid.Column="2"
+                Grid.Row="9"
+                Width="250" 
+                Height="45"
+                Content="Выбрать файл"
+                FontSize="20"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Center" 
+               
+                Click="btnaddphoto_Click"/>
         <Button x:Name="btnadd"
            
-              Grid.Row="9"
+                Grid.Row="10"
                 Width="250" 
+                Height="45"
                 Content="Добавить"
                 FontSize="20"
-                VerticalAlignment="Stretch"
+                VerticalAlignment="Bottom"
                 HorizontalAlignment="Center" 
-                Margin="80,10,50,0"
+               
                 Click="btnadd_Click"/>
         <TextBox x:Name="Lname"
                  Grid.Column="1"
                  Grid.Row="1"
+                 FontSize="25"
                  Width="350"
                  Height="50"
-                 VerticalAlignment="Stretch">
+                 VerticalAlignment="Stretch" 
+                 PreviewTextInput="FIO_PreviewTextInput"
+                
+                 />
 
-        </TextBox>
+
         <TextBox x:Name="FName"
                  Grid.Column="1"
+                 FontSize="25"
                  Grid.Row="2"
                  Width="350"
                  Height="50"
-                 VerticalAlignment="Stretch">
+                 VerticalAlignment="Stretch"
+                 PreviewTextInput="FIO_PreviewTextInput"
+                 />
 
-        </TextBox>
+
         <TextBox x:Name="MName"
+                  FontSize="25"
                  Grid.Column="1"
                  Grid.Row="3"
                  Width="350"
                  Height="50"
-                 VerticalAlignment="Stretch">
+                 VerticalAlignment="Stretch"
+                 PreviewTextInput="FIO_PreviewTextInput"
+                 >
 
         </TextBox>
         <TextBox x:Name="Phone"
+                  FontSize="25"
                  Grid.Column="1"
                  Grid.Row="4"
                  Width="350"
                  Height="50"
-                 VerticalAlignment="Stretch" TextChanged="Phone_TextChanged">
+                 VerticalAlignment="Stretch" 
+                 TextChanged="Phone_TextChanged"
+                 PreviewTextInput="Phone_PreviewTextInput"
+                 >
+
 
         </TextBox>
         <TextBox x:Name="Email"
+                  FontSize="25"
                  Grid.Column="1"
                  Grid.Row="6"
                  Width="350"
                  Height="50"
-                 VerticalAlignment="Stretch">
+                 VerticalAlignment="Stretch"
+                 PreviewTextInput="Email_PreviewTextInput">
 
         </TextBox>
         <TextBox x:Name="Login"
+                  FontSize="25"
                  Grid.Column="1"
                  Grid.Row="7"
                  Width="350"
@@ -143,6 +192,7 @@
 
         </TextBox>
         <TextBox x:Name="Password"
+                  FontSize="25"
                  Grid.Column="1"
                  Grid.Row="8"
                  Width="350"
@@ -151,11 +201,13 @@
 
         </TextBox>
         <ComboBox x:Name="cmbRole"
+                   FontSize="25"
                  Grid.Column="1"
                  Grid.Row="5"
                  Width="350"
                  Height="50"
-                 VerticalAlignment="Stretch" >
+                 VerticalAlignment="Stretch" 
+                 SelectionChanged="cmbRole_SelectionChanged" >
 
         </ComboBox>
     </Grid>

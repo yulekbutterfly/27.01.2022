@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_27._01._2022.Windows"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Window6" Height="550" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -70,7 +71,7 @@
 
         <Button x:Name="btnaddProduct"
            
-              Grid.Row="8"
+                Grid.Row="8"
                 Width="250" 
                 Content="Добавить"
                 FontSize="20"
@@ -78,53 +79,63 @@
                 
                 Click="btnaddProduct_Click" Height="55" VerticalAlignment="Top"/>
         <TextBox x:Name="tbProdTitle"
+                 FontSize="25"
                  Grid.Column="1"
                  Grid.Row="1"
                  Width="350"
                  Height="50"
-                 VerticalAlignment="Stretch">
+                 VerticalAlignment="Stretch"
+                 PreviewTextInput="TitleProduct_PreviewTextInput">
 
         </TextBox>
         <ComboBox x:Name="cmbType"
                  Grid.Column="1"
+                 FontSize="25"
                  Grid.Row="2"
                  Width="350"
                  Height="50"
                  VerticalAlignment="Stretch">
 
         </ComboBox>
-        <TextBox x:Name="Cost"
+        <TextBox x:Name="tbCost"
                  Grid.Column="1"
+                 FontSize="25"
                  Grid.Row="3"
                  Width="350"
                  Height="50"
-                 VerticalAlignment="Stretch">
+                 VerticalAlignment="Stretch"
+                 PreviewTextInput="Numbers_PreviewTextInput">
 
         </TextBox>
-        <TextBox x:Name="Warranty"
+        <TextBox x:Name="tbWarranty"
                  Grid.Column="1"
+                 FontSize="25"
                  Grid.Row="4"
                  Width="350"
                  Height="50"
-                 VerticalAlignment="Stretch">
+                 VerticalAlignment="Stretch"
+                 PreviewTextInput="DateProduct_PreviewTextInput">
 
         </TextBox>
         <ComboBox x:Name="cbStatus"
                  Grid.Column="1"
+                  FontSize="25"
                  Grid.Row="5"
                  Width="350"
                  Height="50"
                  VerticalAlignment="Stretch">
 
         </ComboBox>
-        <TextBox x:Name="tbDateOfIssue"
+        <DatePicker x:Name="dpDateOfIssue"
                  Grid.Column="1"
+                 FontSize="25"
                  Grid.Row="6"
                  Width="350"
                  Height="50"
                  VerticalAlignment="Stretch">
 
-        </TextBox>
+        </DatePicker>
+     
 
 
 
